@@ -47,7 +47,7 @@ conda install -y \
     aws.keypair_name = "default"
     override.ssh.private_key_path = "keys/default.pem"
 
-    aws.ami = "ami-20b6aa21"
+    aws.ami = "ami-936d9d93"
     override.ssh.username = "ubuntu"
 
     aws.region = "ap-northeast-1"

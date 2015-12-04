@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ruby -e 'loop do exit if `vagrant status` =~ /stopped/; puts "."; sleep 10; end'
+ruby -e 'loop do exit unless `vagrant status` =~ /stopping/; puts "."; sleep 10; end'
