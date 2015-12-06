@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install keras
+pip install --no-deps keras
