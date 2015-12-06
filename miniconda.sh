@@ -7,3 +7,5 @@ rm Miniconda-latest-Linux-`uname -p`.sh
 
 echo export PATH=\$HOME/miniconda2/bin:\$PATH >> ~/.profile
 source ~/.profile
+
+conda install -y pip
