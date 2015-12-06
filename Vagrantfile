@@ -4,6 +4,8 @@
 require "dotenv"
 Dotenv.load
 
+ENV['VAGRANT_DEFAULT_PROVIDER'] ||= 'aws'
+
 Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: <<-EOC
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.5-18_amd64.deb
