@@ -13,7 +13,7 @@ sudo apt-get install -y git swig
 conda install -y numpy
 pushd /mnt
 sudo chmod a+rwx .
-sudo rm /tmp
+sudo rm -rf /tmp
 sudo ln -s /mnt /tmp
 git clone --recurse-submodules https://github.com/tensorflow/tensorflow
 cd tensorflow
