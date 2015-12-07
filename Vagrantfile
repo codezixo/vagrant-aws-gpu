@@ -7,17 +7,6 @@ Dotenv.load
 ENV['VAGRANT_DEFAULT_PROVIDER'] ||= 'aws'
 
 Vagrant.configure("2") do |config|
-  config.vm.provision :shell, privileged: false, inline: <<-EOC
-source /vagrant/cuda.sh
-source /vagrant/kernel.sh
-source /vagrant/miniconda.sh
-# source /vagrant/tensorflow.sh
-# source /vagrant/tensorflow_cpu.sh
-source /vagrant/tensorflow_gpu.sh
-source /vagrant/keras.sh
-sudo reboot
-  EOC
-
   config.vm.provider :aws do |aws, override|
     override.vm.box = "dummy"
     override.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
@@ -36,5 +25,26 @@ sudo reboot
     aws.security_groups = "default_instance"
     aws.tags = {Name: "GPU"}
     override.vm.hostname = ENV['AWS_HOSTNAME']
+  end
+
+  config.vm.define :default, primary: true do |config|
+    config.vm.provision :shell, privileged: false, inline: <<-EOC
+source /vagrant/cuda.sh
+source /vagrant/kernel.sh
+source /vagrant/miniconda.sh
+# source /vagrant/tensorflow_cpu.sh
+source /vagrant/tensorflow_gpu.sh
+source /vagrant/keras.sh
+sudo reboot
+    EOC
+  end
+
+  config.vm.define :tensorflow_compiler, autostart: false do |config|
+    config.vm.provision :shell, privileged: false, inline: <<-EOC
+source /vagrant/cuda.sh
+source /vagrant/kernel.sh
+source /vagrant/miniconda.sh
+source /vagrant/tensorflow_compile.sh
+    EOC
   end
 end

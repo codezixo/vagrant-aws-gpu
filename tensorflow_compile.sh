@@ -24,7 +24,6 @@ TF_UNOFFICIAL_SETTING=1 TF_NEED_CUDA=1 TF_CUDA_COMPUTE_CAPABILITIES=3.0 ./config
 bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 bazel-bin/tensorflow/tools/pip_package/build_pip_package /mnt/tensorflow_pkg
 pip install /mnt/tensorflow_pkg/*.whl
-rm -rf /mnt/tensorflow_pkg
 cd ..
 rm -rf tensorflow
 popd
