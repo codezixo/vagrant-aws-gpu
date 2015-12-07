@@ -4,6 +4,9 @@ sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq oracle-java8-installer pkg-config zip g++ zlib1g-dev unzip
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq oracle-java8-installer
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq oracle-java8-installer
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq oracle-java8-installer
 curl -qsSLkO https://github.com/bazelbuild/bazel/releases/download/0.1.1/bazel-0.1.1-installer-linux-x86_64.sh
 sudo bash bazel-0.1.1-installer-linux-x86_64.sh
 rm -f bazel-0.1.1-installer-linux-x86_64.sh
@@ -20,7 +23,7 @@ cd tensorflow
 TF_UNOFFICIAL_SETTING=1 TF_NEED_CUDA=1 TF_CUDA_COMPUTE_CAPABILITIES=3.0 ./configure </dev/null
 bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
 bazel-bin/tensorflow/tools/pip_package/build_pip_package /mnt/tensorflow_pkg
-pip install /mnt/tensorflow_pkg/tensorflow-0.5.0-cp27-none-linux_x86_64.whl
+pip install /mnt/tensorflow_pkg/*.whl
 rm -rf /mnt/tensorflow_pkg
 cd ..
 rm -rf tensorflow
