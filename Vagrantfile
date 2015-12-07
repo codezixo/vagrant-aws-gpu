@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
 source /vagrant/cuda.sh
 source /vagrant/kernel.sh
 source /vagrant/miniconda.sh
-# source /vagrant/tensorflow.sh
-source /vagrant/tensorflow_cpu.sh
+source /vagrant/tensorflow.sh
+# source /vagrant/tensorflow_cpu.sh
 source /vagrant/keras.sh
 sudo reboot
   EOC

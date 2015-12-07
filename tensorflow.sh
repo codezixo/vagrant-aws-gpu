@@ -5,7 +5,7 @@ sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq oracle-java8-installer pkg-config zip g++ zlib1g-dev unzip
-wget https://github.com/bazelbuild/bazel/releases/download/0.1.1/bazel-0.1.1-installer-linux-x86_64.sh
+curl -qsSLkO https://github.com/bazelbuild/bazel/releases/download/0.1.1/bazel-0.1.1-installer-linux-x86_64.sh
 sudo bash bazel-0.1.1-installer-linux-x86_64.sh
 rm -f bazel-0.1.1-installer-linux-x86_64.sh
 

@@ -7,6 +7,11 @@ rm -f cuda-repo-ubuntu1404_7.5-18_amd64.deb
 sudo apt-get update
 sudo apt-get install -y cuda-7-0
 
+tar xzf cudnn/cudnn-6.5-linux-x64-v2.tgz
+sudo cp cudnn-6.5-linux-x64-v2/libcudnn* /usr/local/cuda/lib64
+sudo cp cudnn-6.5-linux-x64-v2/cudnn.h /usr/local/cuda/include/
+rm -rf cudnn-6.5-linux-x64-v2
+
 echo export CUDA_HOME=/usr/local/cuda >> ~/.profile
 echo export PATH=\$CUDA_HOME/bin:\$PATH >> ~/.profile
 echo export LD_LIBRARY_PATH=\$CUDA_HOME/lib64 >> ~/.profile
