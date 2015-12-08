@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get install -y git
 conda install -y pandas scikit-learn scikit-image nose h5py
 
@@ -10,7 +12,7 @@ git clone $GH_URI -b $BASE_BRANCH
 cd autofpop
 git checkout -b $TARGET_BRANCH
 
-python -m autofpop.make_model
+python -m autofpop.make_model &> model/log
 
 git add -A model
 git config --global user.name "`git --no-pager show --no-patch --format=%an`"
