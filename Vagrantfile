@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
     override.vm.box = "dummy"
     override.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
 
-    aws.access_key_id = ENV["AWS_ACCESS_KEY_ID"]
-    aws.secret_access_key = ENV["AWS_SECRET_ACCESS_KEY"]
+    aws.access_key_id = ENV["ACCESS_KEY_ID"]
+    aws.secret_access_key = ENV["SECRET_ACCESS_KEY"]
 
     aws.keypair_name = "default"
     override.ssh.private_key_path = "keys/default.pem"
@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     aws.instance_type = "g2.2xlarge"
     aws.security_groups = "default_instance"
     aws.tags = {Name: "GPU"}
-    override.vm.hostname = ENV['AWS_HOSTNAME']
+    override.vm.hostname = ENV['HOSTNAME']
   end
 
   config.vm.define :default, primary: true do |config|
