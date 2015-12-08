@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install --no-deps keras
+pip install --no-deps git+git://github.com/fchollet/keras.git
