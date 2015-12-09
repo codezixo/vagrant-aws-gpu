@@ -1,12 +1,12 @@
 #!/bin/bash
 
+GH_URI="https://${GH_TOKEN}@github.com/ermaker/autofpop.git"
+DATE=`date +%Y%m%d%H%M%S`
+TARGET_BRANCH=model_${DATE}
+
 sudo apt-get install -y git
 conda install -y pandas scikit-learn scikit-image nose h5py
 
-GH_URI="https://${GH_TOKEN}@github.com/ermaker/autofpop.git"
-BASE_BRANCH=apply_logic
-DATE=`date +%Y%m%d%H%M%S`
-TARGET_BRANCH=model_${DATE}
 rm -rf autofpop
 git clone $GH_URI -b $BASE_BRANCH
 cd autofpop
