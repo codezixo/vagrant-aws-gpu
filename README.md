@@ -75,23 +75,6 @@ Use `wait_stopping.sh` to wait until your stopping instance is stopped.
 $ ./wait_stopping.sh ; vagrant up --provision; vagrant halt
 ```
 
-### Train the autofpop model
-
-Append `.env` file:
-
-```
-# ...
-
-GH_TOKEN=[your github token]
-BASE_BRANCH=[your base branch to train]
-```
-
-Run:
-
-```sh
-$ vagrant up; ./train.sh; vagrant halt  # Create or start the instance, train the model and push it, and shutdown the instance
-```
-
 ### Destroy the instance
 
 ```sh
