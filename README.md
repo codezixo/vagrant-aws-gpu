@@ -25,15 +25,35 @@ Make `.env` file:
 ```
 ACCESS_KEY_ID=[your access key id of aws]
 SECRET_ACCESS_KEY=[your secret access key of aws]
+KEYPAIR_NAME=[your keypair name]
+SECURITY_GROUPS=[your security_groups]
 HOSTNAME=[your hostname of instance]
 ```
 
-TODO: Setup other settings for aws defined in `Vagrantfile`.
+If you want to change the region, you should change the region, the ami (base image), and maybe also `ssh.username`.
 
-* keypair_name
-* region
-* security_groups
-* tags (name)
+```ruby
+# ...
+
+Vagrant.configure("2") do |config|
+  config.vm.provider :aws do |aws, override|
+
+    # ...
+
+    aws.ami = "ami-936d9d93"  # Should be changed
+    override.ssh.username = "ubuntu" # Should be changed
+    aws.region = "ap-northeast-1" # Should be changed
+
+    # ...
+
+  end
+
+  # ...
+
+end
+
+# ...
+```
 
 ## Usage
 

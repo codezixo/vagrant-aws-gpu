@@ -14,17 +14,17 @@ Vagrant.configure("2") do |config|
     aws.access_key_id = ENV["ACCESS_KEY_ID"]
     aws.secret_access_key = ENV["SECRET_ACCESS_KEY"]
 
-    aws.keypair_name = "default"
-    override.ssh.private_key_path = "keys/default.pem"
+    aws.keypair_name = ENV["KEYPAIR_NAME"]
+    override.ssh.private_key_path = "keys/private.pem"
 
     aws.ami = "ami-936d9d93"
     override.ssh.username = "ubuntu"
 
     aws.region = "ap-northeast-1"
     aws.instance_type = "g2.2xlarge"
-    aws.security_groups = "default_instance"
-    aws.tags = {Name: "GPU"}
-    override.vm.hostname = ENV['HOSTNAME']
+    aws.security_groups = ENV["SECURITY_GROUPS"]
+    aws.tags = {Name: ENV["HOSTNAME"]}
+    override.vm.hostname = ENV["HOSTNAME"]
   end
 
   config.vm.define :default, primary: true do |config|
