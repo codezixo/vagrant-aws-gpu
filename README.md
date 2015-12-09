@@ -91,3 +91,9 @@ Run:
 ```sh
 $ vagrant up; ./train.sh; vagrant halt  # Create or start the instance, train the model and push it, and shutdown the instance
 ```
+
+### Destroy the instance
+
+```sh
+$ vagrant destroy -f
+```
