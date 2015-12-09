@@ -1,9 +1,11 @@
 # AWS GPU Instance with Vagrant
 
+This generates an AWS GPU instance, which is installed python 2.x (with miniconda), tensorflow (gpu enabled), keras (with tensorflow as backend)
+
 * Instance Type: g2.2xlarge
 * Region: ap-northeast-1
 * Base Image: ubuntu 14.04
-* Installed Packages: cuda libraries, miniconda, tensorflow (gpu), keras (with tensorflow as backend)
+* Installed Packages: cuda libraries, miniconda, tensorflow (gpu enabled), keras (with tensorflow as backend)
 
 ## Prerequisites
 
