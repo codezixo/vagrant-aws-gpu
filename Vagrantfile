@@ -17,10 +17,10 @@ Vagrant.configure("2") do |config|
     aws.keypair_name = ENV["KEYPAIR_NAME"]
     override.ssh.private_key_path = "keys/private.pem"
 
-    aws.ami = "ami-936d9d93"
+    aws.ami = "ami-5189a661"
     override.ssh.username = "ubuntu"
 
-    aws.region = "ap-northeast-1"
+    aws.region = "us-west-2"
     aws.instance_type = "g2.2xlarge"
     aws.security_groups = ENV["SECURITY_GROUPS"]
     aws.tags = {Name: ENV["HOSTNAME"]}
