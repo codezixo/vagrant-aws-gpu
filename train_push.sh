@@ -12,7 +12,7 @@ git clone $GH_URI -b $BASE_BRANCH
 cd autofpop
 git checkout -b $TARGET_BRANCH
 
-python -m autofpop.make_model &> model/log
+python -m autofpop.make_model |& tee model/log
 
 git add -A model
 git config --global user.name "`git --no-pager show --no-patch --format=%an`"
