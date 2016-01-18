@@ -3,7 +3,7 @@
 This generates an AWS GPU instance, which is installed python 2.x (with miniconda), tensorflow (gpu enabled), keras (with tensorflow as backend)
 
 * Instance Type: g2.2xlarge
-* Region: ap-northeast-1
+* Region: us-west-2
 * Base Image: ubuntu 14.04
 * Installed Packages: cuda libraries, miniconda, tensorflow (gpu enabled), keras (with tensorflow as backend)
 
@@ -42,9 +42,9 @@ Vagrant.configure("2") do |config|
 
     # ...
 
-    aws.ami = "ami-936d9d93"  # Should be changed
+    aws.ami = "ami-5189a661"  # Should be changed
     override.ssh.username = "ubuntu" # Should be changed
-    aws.region = "ap-northeast-1" # Should be changed
+    aws.region = "us-west-2" # Should be changed
 
     # ...
 
@@ -71,10 +71,10 @@ Or just:
 $ ./provision.sh
 ```
 
-Use `wait_stopping.sh` to wait until your stopping instance is stopped.
+Use `wait_stopping.rb` to wait until your stopping instance is stopped.
 
 ```sh
-$ ./wait_stopping.sh ; vagrant up --provision; vagrant halt
+$ ./wait_stopping.rb ; vagrant up --provision; vagrant halt
 ```
 
 ### Train the autofpop model
