@@ -1,1 +1,1 @@
-(./wait_stopping.sh; vagrant up --provision; vagrant halt)
+(./wait_stopping.rb; vagrant up --provision; vagrant halt)

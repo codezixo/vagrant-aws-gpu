@@ -71,10 +71,10 @@ Or just:
 $ ./provision.sh
 ```
 
-Use `wait_stopping.sh` to wait until your stopping instance is stopped.
+Use `wait_stopping.rb` to wait until your stopping instance is stopped.
 
 ```sh
-$ ./wait_stopping.sh ; vagrant up --provision; vagrant halt
+$ ./wait_stopping.rb ; vagrant up --provision; vagrant halt
 ```
 
 ### Destroy the instance
